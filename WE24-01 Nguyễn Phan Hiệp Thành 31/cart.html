@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - MusicShop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🎵 MusicShop</div>
+        <nav>
+            <a href="index.html">Trang chủ</a>
+            <a href="products.html">Sản phẩm</a>
+            <a href="about.html">Giới thiệu</a>
+            <a href="contact.html">Liên hệ</a>
+            <a href="cart.html">Giỏ hàng 🛒</a>
+        </nav>
+    </header>
+
+    <section class="cart-hero">
+        <h1>Giỏ hàng của bạn</h1>
+        <p>Xem và quản lý các sản phẩm đã chọn</p>
+    </section>
+
+    <section class="cart-content">
+        <div id="cart-items" class="cart-items"></div>
+        <button class="btn" onclick="checkout()">Thanh toán</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MusicShop. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Demo giỏ hàng
+        let cart = ['Guitar Acoustic', 'Piano Điện', 'Trống Điện'];
+
+        const cartItemsDiv = document.getElementById('cart-items');
+
+        function renderCart() {
+            cartItemsDiv.innerHTML = '';
+            if(cart.length === 0){
+                cartItemsDiv.innerHTML = '<p>Giỏ hàng trống!</p>';
+                return;
+            }
+            cart.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'cart-item fade-in';
+                div.innerHTML = `
+                    <span>${item}</span>
+                    <button onclick="removeItem(${index})">Xóa</button>
+                `;
+                cartItemsDiv.appendChild(div);
+            });
+        }
+
+        function removeItem(index){
+            cart.splice(index, 1);
+            renderCart();
+        }
+
+        function checkout(){
+            if(cart.length === 0){
+                alert("Giỏ hàng trống!");
+            } else {
+                alert("Thanh toán thành công!");
+                cart = [];
+                renderCart();
+            }
+        }
+
+        renderCart();
+    </script>
+</body>
+</html><section class="cart-content">
+    <div id="cart-items" class="cart-items"></div>
+    <button class="btn" onclick="checkoutCart()">Thanh toán</button>
+</section>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi tiết sản phẩm - MusicShop</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<div class="logo">🎵 MusicShop</div>
+<nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="products.html">Sản phẩm</a>
+    <a href="about.html">Giới thiệu</a>
+    <a href="contact.html">Liên hệ</a>
+    <a href="cart.html">Giỏ hàng 🛒</a>
+</nav>
+</header>
+
+<section class="product-detail">
+    <div class="product-images">
+        <img id="product-img" src="" alt="">
+    </div>
+    <div class="product-info">
+        <h2 id="product-name"></h2>
+        <p id="product-price"></p>
+        <p id="product-desc"></p>
+        <button class="btn" onclick="addToCartJS()">Thêm vào giỏ</button>
+    </div>
+</section>
+
+<footer>
+<p>&copy; 2026 MusicShop. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const productKey = params.get('product');
+
+const productsData = {
+    guitar: {
+        name: "Guitar Acoustic",
+        price: "2.000.000 VND",
+        desc: "Guitar chất lượng cao, âm thanh ấm và bền.",
+        img: "images/guitar.jpg"
+    },
+    piano: {
+        name: "Piano Điện",
+        price: "15.000.000 VND",
+        desc: "Piano điện hiện đại, đa chức năng.",
+        img: "images/piano.jpg"
+    },
+    drum: {
+        name: "Trống Điện",
+        price: "8.000.000 VND",
+        desc: "Trống điện dành cho người mới và chuyên nghiệp.",
+        img: "images/drum.jpg"
+    },
+    violin: {
+        name: "Violin Cổ Điển",
+        price: "3.500.000 VND",
+        desc: "Violin chất lượng tốt cho học sinh và nghệ sĩ.",
+        img: "images/violin.jpg"
+    }
+};
+
+const prod = productsData[productKey];
+if(prod){
+    document.getElementById("product-img").src = prod.img;
+    document.getElementById("product-name").innerText = prod.name;
+    document.getElementById("product-price").innerText = prod.price;
+    document.getElementById("product-desc").innerText = prod.desc;
+}
+
+function addToCartJS(){
+    if(prod){
+        addToCart(prod.name);
+    }
+}
+<button class="btn" onclick="addToCartJS()">Thêm vào giỏ</button>
+
+</script>
+</body>
+</html>
