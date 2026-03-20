@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>Melody Shop - Nhạc Cụ Chính Hãng</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+        .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+        .fa-guitar, .fa-music {font-size:200px}
+        /* Hiệu ứng hover cho ảnh sản phẩm */
+        .product-card { transition: transform 0.3s; }
+        .product-card:hover { transform: scale(1.05); }
+        /* Đảm bảo các section ẩn đi để demo animation khi chuyển tab */
+        .tab-content { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-red w3-large" href="javascript:void(0);" onclick="toggleMenu()"><i class="fa fa-bars"></i></a>
+    <a href="javascript:void(0)" onclick="openTab('Home')" class="w3-bar-item w3-button w3-padding-large w3-red">TRANG CHỦ</a>
+    <a href="javascript:void(0)" onclick="openTab('Products')" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-red">SẢN PHẨM</a>
+    <a href="javascript:void(0)" onclick="openTab('Promo')" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-red">KHUYẾN MÃI</a>
+    <a href="javascript:void(0)" onclick="openTab('Contact')" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-red">LIÊN HỆ</a>
+    <a href="javascript:void(0)" onclick="openTab('Cart')" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-red"><i class="fa fa-shopping-cart"></i> GIỎ HÀNG</a>
+  </div>
+</div>
+
+<header class="w3-container w3-red w3-center animate__animated animate__fadeIn" style="padding:128px 16px" id="headerHome">
+  <h1 class="w3-margin w3-jumbo">MELODY SHOP</h1>
+  <p class="w3-xlarge">Khơi nguồn đam mê âm nhạc của bạn</p>
+  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top" onclick="openTab('Products')">Mua Ngay</button>
+</header>
+
+<div id="Products" class="w3-container w3-padding-64 tab-content animate__animated animate__fadeInUp">
+  <div class="w3-content">
+    <h2 class="w3-center">DANH MỤC SẢN PHẨM</h2>
+    <div class="w3-row-padding w3-margin-top">
+        <div class="w3-third w3-margin-bottom">
+            <div class="w3-card product-card">
+                <img src="guitar.jpg" alt="Guitar" style="width:100%">
+                <div class="w3-container w3-white">
+                    <h3>Guitar Acoustic</h3>
+                    <p class="w3-opacity">5.500.000đ</p>
+                    <button class="w3-button w3-black w3-block w3-margin-bottom">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+            <div class="w3-card product-card">
+                <img src="piano.jpg" alt="Piano" style="width:100%">
+                <div class="w3-container w3-white">
+                    <h3>Piano Điện</h3>
+                    <p class="w3-opacity">15.000.000đ</p>
+                    <button class="w3-button w3-black w3-block w3-margin-bottom">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+            <div class="w3-card product-card">
+                <img src="violin.jpg" alt="Violin" style="width:100%">
+                <div class="w3-container w3-white">
+                    <h3>Violin Classic</h3>
+                    <p class="w3-opacity">3.200.000đ</p>
+                    <button class="w3-button w3-black w3-block w3-margin-bottom">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div id="Promo" class="w3-container w3-light-grey w3-padding-64 tab-content animate__animated animate__bounceIn">
+  <iframe width="560" height="315" src="https://www.yout-ube.com/embed/Sziqfl6iwWw?si=xx1g02IENx64lk8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="w3-content w3-center">
+        <h2 class="w3-text-red">SIÊU SALE MÙA HÈ</h2>
+        <i class="fa fa-gift w3-padding-32 w3-text-red" style="font-size:100px"></i>
+        <h4>Giảm giá lên đến 50% cho tất cả các dòng trống!</h4>
+        <p>Nhập mã: <b>MUSIC2024</b></p>
+    </div>
+</div>
+
+<div id="Cart" class="w3-container w3-padding-64 tab-content animate__animated animate__slideInRight">
+    <div class="w3-content">
+        <h2>GIỎ HÀNG CỦA BẠN</h2>
+        <table class="w3-table w3-striped w3-bordered w3-border">
+            <tr class="w3-red">
+                <th>Sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá tiền</th>
+            </tr>
+            <tr>
+                <td>Guitar Acoustic</td>
+                <td>1</td>
+                <td>5.500.000đ</td>
+            </tr>
+        </table>
+        <div class="w3-right w3-padding-32">
+            <h4>Tổng cộng: 5.500.000đ</h4>
+            <button class="w3-button w3-green w3-large">Thanh Toán</button>
+        </div>
+    </div>
+</div>
+
+<div id="Contact" class="w3-container w3-padding-64 tab-content animate__animated animate__fadeIn">
+    <div class="w3-content">
+        <h2 class="w3-center">LIÊN HỆ VỚI CHÚNG TÔI</h2>
+        <div class="w3-row-padding" style="margin-top:48px">
+            <div class="w3-half">
+                <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Hà Nội, Việt Nam</p>
+                <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: 0123 456 789</p>
+                <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"></i> Email: contact@melody.com</p>
+            </div>
+            <div class="w3-half">
+                <form action="/action_page.php" target="_blank">
+                    <p><input class="w3-input w3-border" type="text" placeholder="Họ tên" required name="Name"></p>
+                    <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+                    <p><input class="w3-input w3-border" type="text" placeholder="Nội dung" required name="Message"></p>
+                    <button class="w3-button w3-black w3-right" type="submit">GỬI TIN NHẮN</button>
+                </form>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125386.51538697511!2d106.62707199999998!3d10.862592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d575f67f9c1d%3A0xc8ce7b82c763b792!2zQ2jDuWEgSG_hurFuZyBQaMOhcA!5e0!3m2!1svi!2s!4v1773973666854!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey">  
+  <div class="w3-xlarge w3-padding-32">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+ </div>
+ <p>Bản quyền © 2024 Melody Shop</p>
+</footer>
+
+<script>
+// Hàm chuyển đổi các tab trang với animation
+function openTab(tabName) {
+  var i;
+  var x = document.getElementsByClassName("tab-content");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  
+  if(tabName === 'Home') {
+      document.getElementById('headerHome').style.display = "block";
+  } else {
+      document.getElementById('headerHome').style.display = "none";
+      document.getElementById(tabName).style.display = "block";
+  }
+}
+
+// Mặc định hiển thị trang chủ khi tải trang
+window.onload = function() {
+    openTab('Home');
+};
+
+function toggleMenu() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
